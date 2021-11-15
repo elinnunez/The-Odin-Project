@@ -1,0 +1,38 @@
+* {
+    background-color: rgb(241, 227, 163);
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+p {
+    font-size: large;
+    font-weight: bold;
+}
+
+.list {
+    border-style: solid;
+    border-color: black;
+    align-content: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.item {
+    border-style: solid;
+    border-color: black;
+    /* display: flex; */
+    padding: 10px;
+    margin: 10px;
+}
+
+a {
+    display: block;
+    text-align: center;
+}
