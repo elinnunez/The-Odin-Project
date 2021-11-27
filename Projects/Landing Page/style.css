@@ -80,6 +80,8 @@ button {
     font-weight: bold;
     border-radius: 8px;
     padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .part1 img {
