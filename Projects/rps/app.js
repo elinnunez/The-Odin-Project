@@ -36,38 +36,68 @@ const playRound = (pS, cS) => {
     }
 };
 
-const game = () => {
+// const game = () => {
 
-    let playerWins = 0;
-    let compWins = 0;
-    let tie = 0;
+//     let playerWins = 0;
+//     let compWins = 0;
+//     let tie = 0;
 
-    for (let i = 0; i < 5; i++) {
-        let playSel = prompt("Enter Choice: ");
-        let compSel = computerPlay();
+//     // for (let i = 0; i < 5; i++) {
+//     //     let playSel = prompt("Enter Choice: ");
+//     //     let compSel = computerPlay();
 
-        let cur = playRound(playSel.toLowerCase(), compSel);
+//     //     let cur = playRound(playSel.toLowerCase(), compSel);
         
-        alert(cur);
+//     //     alert(cur);
 
-        if(cur[4] == "W") {
-            playerWins++;
-        } else if (cur[4] == "L") {
-            compWins++;
-        } else if( cur[0] == "I") {
-            tie++;
-        } else {
-            i--;
-        }
-    }
+//     //     if(cur[4] == "W") {
+//     //         playerWins++;
+//     //     } else if (cur[4] == "L") {
+//     //         compWins++;
+//     //     } else if( cur[0] == "I") {
+//     //         tie++;
+//     //     } else {
+//     //         i--;
+//     //     }
+//     // }
 
-    if(playerWins > compWins) {
-        alert("Player is the Grand Winner")
-    } else if(compWins > playerWins) {
-        alert("Computer is the Grand Winner");
-    } else {
-        alert("No Grand Winner! Both Tied");
-    }
-};
+//     if(playerWins > compWins) {
+//         alert("Player is the Grand Winner")
+//     } else if(compWins > playerWins) {
+//         alert("Computer is the Grand Winner");
+//     } else {
+//         alert("No Grand Winner! Both Tied");
+//     }
+// };
 
-game();
+// game();
+
+const paperBtn = document.querySelector("#paper");
+const rockBtn = document.querySelector("#rock");
+const scissorsBtn = document.querySelector("#scissors");
+
+paperBtn.addEventListener("click",(e) => {
+    // alert("Paper");
+
+    let pcChoice = computerPlay();
+
+    alert(playRound("paper", pcChoice));
+
+    // alert("paper vs " + pcChoice);
+});
+
+rockBtn.addEventListener("click",(e) => {
+    let pcChoice = computerPlay();
+
+    alert(playRound("rock", pcChoice))
+
+    // alert("rock vs " + pcChoice);
+});
+
+scissorsBtn.addEventListener("click",(e) => {
+    let pcChoice = computerPlay();
+
+    alert(playRound("scissors", pcChoice));
+
+    // alert("scissors vs " + pcChoice);
+})
