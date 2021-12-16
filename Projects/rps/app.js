@@ -119,7 +119,7 @@ const restart = () => {
     tie = 0;
     result.textContent = "First to 5 Wins";
     sb.textContent = "Player: 0 | Computer: 0";
-    final.textContent = "No Final";
+    final.textContent = "";
     rest.style.visibility = "hidden";
     rest.style.display = "none";
     sb.style.color = "black";
