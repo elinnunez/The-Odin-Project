@@ -6,53 +6,64 @@ const computerPlay = () => {
     return chosen.toLowerCase();
 };
 
+const buttons = document.querySelectorAll("button");
+
+const disableBtns = () => {
+    buttons.forEach(btn => {
+        btn.disabled = true
+    })
+}
+
 let playerWins = 0;
 let compWins = 0;
 let tie = 0;
 let gameCount = 0;
 
+const result = document.querySelector(".result");
+const final = document.querySelector(".final");
+
 const playRound = (pS, cS) => {
     if (pS === "rock") {
         if (cS === "paper") {
-            alert("You Lose! Paper beats Rock");
+            result.textContent = ("You Lose! Paper beats Rock");
             compWins++;
-            console.log("Player: " + playerWins + " vs Computer: " + compWins);
+            sb.textContent = ("Player: " + playerWins + " vs Computer: " + compWins);
         } else if (cS  === "scissors") {
-            alert("You Win! Rock beats Scissors");
+            result.textContent = ("You Win! Rock beats Scissors");
             playerWins++;
-            console.log("Player: " + playerWins + " vs Computer: " + compWins);
+            sb.textContent = ("Player: " + playerWins + " vs Computer: " + compWins);
         } else {
-            alert("It's a Tie! Both Players chose Rock");
+            result.textContent = ("It's a Tie! Both Players chose Rock");
             tie++;
-            console.log("Tie: Player: " + playerWins + " vs Computer: " + compWins);
+            sb.textContent = ("Tie: Player: " + playerWins + " vs Computer: " + compWins);
         }
     } else if (pS === "paper") {
         if (cS === "rock") {
-            alert("You Win! Paper beats Rock");
+            result.textContent = ("You Win! Paper beats Rock");
             playerWins++;
-            console.log("Player: " + playerWins + " vs Computer: " + compWins);
+            sb.textContent = ("Player: " + playerWins + " vs Computer: " + compWins);
         } else if (cS  === "scissors") {
-            alert("You Lose! Scissors beats Paper");
+            result.textContent = ("You Lose! Scissors beats Paper");
             compWins++;
-            console.log("Player: " + playerWins + " vs Computer: " + compWins);
+            sb.textContent = ("Player: " + playerWins + " vs Computer: " + compWins);
         } else {
-            alert("It's a Tie! Both Players chose Paper");
+            result.textContent = ("It's a Tie! Both Players chose Paper");
             tie++;
-            console.log("Tie: Player: " + playerWins + " vs Computer: " + compWins);
+            sb.textContent = ("Tie: Player: " + playerWins + " vs Computer: " + compWins);
         }
     } else if (pS == "scissors") {
         if (cS === "paper") {
-            alert("You Win! Scissors beats Paper");
+            result.textContent = ("You Win! Scissors beats Paper");
             playerWins++;
-            console.log("Player: " + playerWins + " vs Computer: " + compWins);
+            sb.textContent = ("Player: " + playerWins + " vs Computer: " + compWins);
         } else if (cS  === "scissors") {
-            alert("You Lose! Scissors beats Paper");
+            result.textContent = ("You Lose! Scissors beats Paper");
             compWins++;
-            console.log("Player: " + playerWins + " vs Computer: " + compWins);
+            sb.textContent = ("Player: " + playerWins + " vs Computer: " + compWins);
         } else {
-            alert("It's a Tie! Both Players chose Scissors");
+            result.textContent = ("It's a Tie! Both Players chose Scissors");
             tie++;
-            console.log("Tie: Player: " + playerWins + " vs Computer: " + compWins);
+            sb.textContent = ("Tie: Player: " + playerWins + " vs Computer: " + compWins);
         }
     }
 
@@ -61,17 +72,19 @@ const playRound = (pS, cS) => {
     if(gameCount === 5) {
         console.log("Final Stats: Player: " + playerWins + " vs Computer: " + compWins);
         if(playerWins > compWins) {
-            sb.textContent = "Player is the Grand Winner";
+            final.textContent = "Player is the Grand Winner";
         } else if(compWins > playerWins) {
-            sb.textContent = "Computer is the Grand Winner";
+            final.textContent = "Computer is the Grand Winner";
         } else {
-            sb.textContent = "No Grand Winner! Both Tied";
+            final.textContent = "No Grand Winner! Both Tied";
         }
 
-        gameCount = 0;
-        playerWins = 0;
-        compWins = 0;
-        tie = 0;
+        // gameCount = 0;
+        // playerWins = 0;
+        // compWins = 0;
+        // tie = 0;
+
+        disableBtns();
     }
 };
 
