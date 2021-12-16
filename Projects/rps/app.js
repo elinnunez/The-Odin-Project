@@ -53,7 +53,7 @@ const playRound = (pS, cS) => {
       result.textContent = "It's a Tie! Both Players chose Rock";
       tie++;
       sb.textContent =
-        "Tie: Player: " + playerWins + " | Computer: " + compWins;
+        "Player: " + playerWins + " | Computer: " + compWins;
     }
   } else if (pS === "paper") {
     if (cS === "rock") {
@@ -68,7 +68,7 @@ const playRound = (pS, cS) => {
       result.textContent = "It's a Tie! Both Players chose Paper";
       tie++;
       sb.textContent =
-        "Tie: Player: " + playerWins + " | Computer: " + compWins;
+        "Player: " + playerWins + " | Computer: " + compWins;
     }
   } else if (pS == "scissors") {
     if (cS === "paper") {
@@ -83,19 +83,22 @@ const playRound = (pS, cS) => {
       result.textContent = "It's a Tie! Both Players chose Scissors";
       tie++;
       sb.textContent =
-        "Tie: Player: " + playerWins + " | Computer: " + compWins;
+        "Player: " + playerWins + " | Computer: " + compWins;
     }
   }
 
 //   gameCount++;
 
   if (playerWins === 5 || compWins === 5) {
-    console.log(
-      "Final Stats: Player: " + playerWins + " | Computer: " + compWins
+
+    sb.textContent = (
+      "Final Score: Player: " + playerWins + " | Computer: " + compWins
     );
     if (playerWins > compWins) {
+        sb.style.color = "green";
       final.textContent = "Player is the Grand Winner";
     } else if (compWins > playerWins) {
+        sb.style.color = "red";
       final.textContent = "Computer is the Grand Winner";
     // } else {
     //   final.textContent = "No Grand Winner! Both Tied";
@@ -119,6 +122,7 @@ const restart = () => {
     final.textContent = "No Final";
     rest.style.visibility = "hidden";
     rest.style.display = "none";
+    sb.style.color = "black";
     enableBtns();
   });
 };
