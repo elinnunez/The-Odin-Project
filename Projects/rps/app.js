@@ -21,7 +21,7 @@ const playRound = (pS, cS) => {
         } else if (cS  === "scissors") {
             return "You Lose! Scissors beats Paper";
         } else {
-            return "It's a Tie! Both Players chose Scissors";
+            return "It's a Tie! Both Players chose Paper";
         }
     } else if (pS == "scissors") {
         if (cS === "paper") {
@@ -29,7 +29,7 @@ const playRound = (pS, cS) => {
         } else if (cS  === "scissors") {
             return "You Lose! Scissors beats Paper";
         } else {
-            return "It's a Tie! Both Players chose Paper";
+            return "It's a Tie! Both Players chose Scissors";
         }
     } else {
         return "Not a Valid Choice from Player";
@@ -76,20 +76,19 @@ const paperBtn = document.querySelector("#paper");
 const rockBtn = document.querySelector("#rock");
 const scissorsBtn = document.querySelector("#scissors");
 
+const sb = document.querySelector(".scoreboard");
+
 paperBtn.addEventListener("click",(e) => {
-    // alert("Paper");
 
     let pcChoice = computerPlay();
 
-    alert(playRound("paper", pcChoice));
-
-    // alert("paper vs " + pcChoice);
+    sb.textContent = (playRound("paper", pcChoice));
 });
 
 rockBtn.addEventListener("click",(e) => {
     let pcChoice = computerPlay();
 
-    alert(playRound("rock", pcChoice))
+    sb.textContent = (playRound("rock", pcChoice))
 
     // alert("rock vs " + pcChoice);
 });
@@ -97,7 +96,7 @@ rockBtn.addEventListener("click",(e) => {
 scissorsBtn.addEventListener("click",(e) => {
     let pcChoice = computerPlay();
 
-    alert(playRound("scissors", pcChoice));
+    sb.textContent = (playRound("scissors", pcChoice));
 
     // alert("scissors vs " + pcChoice);
-})
+});
