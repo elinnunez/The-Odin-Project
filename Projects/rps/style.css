@@ -1,32 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Arbutus&family=Bungee+Inline&family=Press+Start+2P&display=swap');
+
 body {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 100vh;
+    background-color: rgb(204, 204, 204);
+    margin: 0;
+}
+
+header {
+    justify-content: center;
+    display: flex;
+    padding: 0;
+    background-color: rgb(36, 28, 59);
+    color: rgb(247, 236, 89);
+    font-family: 'Bungee Inline', cursive;
+    font-size: 25px;
+    text-align: center;
+}
+
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     /* border-style: solid; */
-    /* border-color: green; */
-    height: 100vh;
-    background-color: rgb(204, 204, 204);
+    /* border-color: blue; */
+    height: 100%;
+}
+
+.but {
+    display: flex;
+    justify-content: space-evenly;
+    /* gap: 80px; */
+    /* border-style: solid; */
+    /* border-color: aqua; */
 }
 
 .container {
-    /* border-style: solid; */
-    /* border-color: yellow; */
+    /* border-style: solid;
+    border-color: yellow; */
     text-align: center;
     font-size: 1.5em;
     background-color: aliceblue;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
+    /* display: flex; */
+    flex-direction: column;
 }
 
 button {
     border-radius: 10px;
     background-color: rgb(186, 220, 243);
-    font-size: 17px;
+    font-size: 20px;
+    /* border-style: solid; */
+    border-color: rgb(154, 159, 228);
 }
 
 button p {
     font-weight: bold;
     margin: 0px;
+}
+
+.choices {
+    display: flex;
+    /* border-style: solid; */
+    /* border-color: red; */
+    flex-direction: row;
+    text-align: center;
+    /* gap: ; */
+    /* padding: 10px; */
+    background-color: rgb(141, 197, 204);
+    border-radius: 20px;
+}
+
+.choices .img {
+    width: auto;
+    height: 100%;
+}
+
+.choices p {
+    font-size: 30px;
+    font-weight: bold;
+    /* border-style: solid; */
+    /* border-color: pink; */
+    font-family: 'Bungee Inline', cursive;
 }
